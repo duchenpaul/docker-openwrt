@@ -1,9 +1,10 @@
-version: '2'
+version: "3.7"
 services:
-  build-openwrt:
-    image: ubuntu
+image: ubuntu
+
+  prepare-env:
     command: >
-      sh -c "
+      bash -c "
         export DEBIAN_FRONTEND=noninteractive
         sed -i 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list && 
         sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list && 
@@ -12,3 +13,11 @@ services:
         apt-get -y autoremove --purge && 
         apt-get clean && 
         echo 'build-openwrt ENV READY'"
+
+    build-openwrt:
+      command: >
+        bash -c "
+        git clone -b https://github.com/openwrt/openwrt.git && 
+        cd openwrt && 
+        ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
+        "
