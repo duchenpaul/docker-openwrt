@@ -14,10 +14,10 @@ services:
         apt-get clean && 
         echo 'build-openwrt ENV READY'"
 
-    build-openwrt:
-      command: >
-        bash -c "
-        git clone -b https://github.com/openwrt/openwrt.git && 
-        cd openwrt && 
-        ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
-        "
+  build-openwrt:
+    command: >
+      bash -c "
+      git clone -b https://github.com/openwrt/openwrt.git && 
+      cd openwrt && 
+      ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
+      "
