@@ -2,7 +2,7 @@ version: '2'
 services:
   build-openwrt:
     image: ubuntu
-    command: >
+    command: |
       - sh -c "
         export DEBIAN_FRONTEND=noninteractive
         sed -i 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list && 
