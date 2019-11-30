@@ -12,8 +12,8 @@ RUN echo 'build-openwrt ENV READY'
 
 # Base image: duchenpaul/build-openwrt:0.1
 # Clone repo
-RUN git clone -b https://github.com/openwrt/openwrt.git
-RUN cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
+# RUN git clone -b https://github.com/openwrt/openwrt.git
+# RUN cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
 
 
 CMD '/bin/bash'
