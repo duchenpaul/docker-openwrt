@@ -15,3 +15,6 @@ RUN echo 'build-openwrt ENV READY'
 RUN git clone -b https://github.com/openwrt/openwrt.git && 
 RUN cd openwrt && 
 RUN ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
+
+
+CMD '/bin/bash'
