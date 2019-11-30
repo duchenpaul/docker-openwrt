@@ -10,10 +10,10 @@ RUN apt-get -y autoremove --purge
 RUN apt-get clean
 RUN echo 'build-openwrt ENV READY'
 
-# Base image: duchenpaul/build-openwrt:0.1
+# Base image: duchenpaul/docker-openwrt
 # Clone repo
-# RUN git clone -b https://github.com/openwrt/openwrt.git
-# RUN cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
+RUN git clone -b openwrt-19.07 https://github.com/openwrt/openwrt.git
+RUN cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
 
 
 CMD '/bin/bash'
