@@ -1,8 +1,8 @@
 version: "3.7"
 
 services:
-  image: ubuntu
   prepare-env:
+    image: ubuntu
     command: >
       bash -c "
         export DEBIAN_FRONTEND=noninteractive
@@ -13,12 +13,7 @@ services:
         apt-get -y autoremove --purge && 
         apt-get clean && 
         echo 'build-openwrt ENV READY'
-
-        "
-
-  build-openwrt:
-    command: >
-      bash -c "
+        
         # Clone repo
         git clone -b https://github.com/openwrt/openwrt.git && 
         cd openwrt && 
