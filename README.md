@@ -14,4 +14,4 @@ Compile openwrt in docker
 
 ## Build openwrt image
 1. Place `.config` in this folder
-2. Build image docker build -t docker-build-openwrt:custom .
+2. Build image `docker build -t docker-build-openwrt:custom .`
