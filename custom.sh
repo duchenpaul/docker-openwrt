@@ -24,5 +24,6 @@ mkdir package/network/config/firewall/patches
 wget -P openwrt/package/network/config/firewall/patches/ https://raw.githubusercontent.com/LGA1150/fullconenat-fw3-patch/master/fullconenat.patch
 # Patch LuCI
 cd feeds/luci && wget -O- https://raw.githubusercontent.com/LGA1150/fullconenat-fw3-patch/master/luci.patch | git apply
+cd /openwrt
 
 echo 'src-git rosy https://github.com/rosywrt/luci.git' >> feeds.conf.default
