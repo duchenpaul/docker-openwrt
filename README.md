@@ -13,5 +13,7 @@ Compile openwrt in docker
 
 
 ## Build openwrt image
-1. Place `.config` in this folder
-2. Build image `docker build -t docker-build-openwrt:custom .`
+1. Free up some RAM `sync; echo 3 > /proc/sys/vm/drop_caches`
+2. Place `.config` in this folder
+3. Build image `docker build -t docker-build-openwrt:custom .`
+4. Start to compile openwrt image: `docker run docker-build-openwrt:custom > compile$(date '+%Y%m%d%H%M%S').log 2>&1`
