@@ -10,7 +10,7 @@ COPY custom.sh openwrt/custom.sh
 
 WORKDIR /home/ubuntu/openwrt
 RUN bash ./custom.sh
-RUN ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
+RUN ./scripts/feeds update -a && ./scripts/feeds install -a
 
 
 CMD make -j$(nproc) V=s 
