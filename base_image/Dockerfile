@@ -17,7 +17,10 @@ WORKDIR /home/ubuntu
 
 # Base image: duchenpaul/docker-openwrt
 # Clone repo
+RUN pwd
 RUN git clone -b openwrt-19.07 https://gitee.com/duchenpaul/openwrt.git
+RUN pwd
+RUN ls -l
 RUN cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
 
 
