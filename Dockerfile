@@ -1,5 +1,4 @@
 FROM duchenpaul/docker-build-openwrt
-RUN groupadd -r ubuntu && useradd -r -g ubuntu ubuntu
 USER ubuntu
 WORKDIR /home/ubuntu
 
