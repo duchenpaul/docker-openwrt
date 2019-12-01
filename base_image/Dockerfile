@@ -1,4 +1,6 @@
 FROM ubuntu
+RUN groupadd -r ubuntu && useradd -r -g ubuntu ubuntu
+USER ubuntu
 
 ENV DEBIAN_FRONTEND=noninteractive
 # Base image: ubuntu
