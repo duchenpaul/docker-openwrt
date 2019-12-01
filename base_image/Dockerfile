@@ -1,6 +1,6 @@
 FROM ubuntu
 RUN groupadd -r ubuntu && useradd -r -g ubuntu ubuntu
-USER ubuntu
+
 
 ENV DEBIAN_FRONTEND=noninteractive
 # Base image: ubuntu
@@ -11,6 +11,9 @@ RUN apt-get -y install wget build-essential asciidoc binutils bzip2 gawk gettext
 RUN apt-get -y autoremove --purge
 RUN apt-get clean
 RUN echo 'build-openwrt ENV READY'
+
+USER ubuntu
+WORKDIR /home/ubuntu
 
 # Base image: duchenpaul/docker-openwrt
 # Clone repo
