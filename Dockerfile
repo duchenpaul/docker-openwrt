@@ -9,4 +9,4 @@ RUN cd openwrt && bash ./custom.sh
 RUN cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
 
 
-CMD ["cd openwrt && make -j$(nproc) V=s > compile_`date '+%Y%m%d%H%M%S'`.log 2>&1"]
+CMD ["cd openwrt && make -j$(nproc) V=s"]
