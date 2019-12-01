@@ -1,6 +1,4 @@
 FROM ubuntu
-RUN useradd -ms /bin/bash ubuntu
-RUN chown ubuntu:ubuntu /home/ubuntu
 
 ENV DEBIAN_FRONTEND=noninteractive
 # Base image: ubuntu
@@ -12,6 +10,8 @@ RUN apt-get -y autoremove --purge
 RUN apt-get clean
 RUN echo 'build-openwrt ENV READY'
 
+RUN useradd -ms /bin/bash ubuntu
+RUN chown ubuntu:ubuntu /home/ubuntu
 
 USER ubuntu
 WORKDIR /home/ubuntu
