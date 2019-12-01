@@ -13,4 +13,5 @@ RUN bash ./custom.sh
 RUN ./scripts/feeds update -a && ./scripts/feeds install -a
 
 
-CMD make -j$(nproc) V=s 
+# CMD make -j$(nproc) V=s 
+CMD make -j1 V=s 
