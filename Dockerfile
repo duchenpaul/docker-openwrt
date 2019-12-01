@@ -2,8 +2,8 @@ FROM ubuntu
 
 ENV DEBIAN_FRONTEND=noninteractive
 # Base image: ubuntu
-RUN sed -i 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
-RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
+RUN sed -i 's/security.ubuntu.com/mirrors.163.com/g' /etc/apt/sources.list
+RUN sed -i 's/archive.ubuntu.com/mirrors.163.com/g' /etc/apt/sources.list
 RUN echo "APT::Acquire::Retries \"3\";" > /etc/apt/apt.conf.d/80-retries
 RUN apt-get update
 RUN apt-get -y install wget build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler
