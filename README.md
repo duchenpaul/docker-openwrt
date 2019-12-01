@@ -2,10 +2,15 @@
 Compile openwrt in docker
 
 ## Complie
-1. Clone the repo
-2. Compile `docker-compose up`
+1. Go to `base_image`
+2. Clone the repo
+3. Compile `docker-compose up`
 
 ## Run
 1. Fetch the image
 
 `docker run duchenpaul/docker-build-openwrt`
+
+
+## Build openwrt image
+1. Place `.config` in this folder
